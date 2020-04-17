@@ -1,0 +1,41 @@
+
+
+entity Characteristic {
+  characteristicId  String required ,
+  serviceId  String ,
+  descripcion  String ,
+  serviceType ServiceType 
+}
+
+entity ServiceType {
+  serviceId  String required  ,
+  descripcion  String ,
+}
+
+entity Sflog {
+   consultaId  Long required ,
+  finConsulta  Instant ,
+  inicioConsulta  Instant ,
+  interfaz  String ,
+  request  String ,
+  response  String ,
+  codigoDom  String ,
+  operacion  String ,
+  lineNumber  String ,
+}
+
+
+relationship ManyToOne {
+	Characteristic{serviceType} to ServiceType
+}
+
+
+// Set pagination options
+paginate Sflog, ServiceType, Characteristic  with pagination
+
+filter Sflog, ServiceType, Characteristic
+// Set service options to all except few
+service all with serviceImpl 
+
+// Set an angular suffix
+// angularSuffix * with mySuffi
