@@ -11,6 +11,11 @@ entity ServiceType {
   descripcion  String ,
 }
 
+entity ServiceType2 {
+  serviceId  String required  ,
+  descripcion  String ,
+}
+
 
 
 
@@ -20,9 +25,9 @@ relationship ManyToOne {
 
 
 // Set pagination options
-paginate ServiceType, Characteristic  with pagination
+paginate ServiceType, Characteristic, ServiceType2  with pagination
 
-filter ServiceType, Characteristic
+filter ServiceType, Characteristic, ServiceType2
 // Set service options to all except few
 service all with serviceImpl 
 
