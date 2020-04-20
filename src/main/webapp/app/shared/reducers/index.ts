@@ -19,6 +19,10 @@ import characteristic, {
 import serviceType, {
   ServiceTypeState
 } from 'app/entities/service-type/service-type.reducer';
+// prettier-ignore
+import serviceType2, {
+  ServiceType2State
+} from 'app/entities/service-type-2/service-type-2.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -33,6 +37,7 @@ export interface IRootState {
   readonly settings: SettingsState;
   readonly characteristic: CharacteristicState;
   readonly serviceType: ServiceTypeState;
+  readonly serviceType2: ServiceType2State;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -49,6 +54,7 @@ const rootReducer = combineReducers<IRootState>({
   settings,
   characteristic,
   serviceType,
+  serviceType2,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar
 });
